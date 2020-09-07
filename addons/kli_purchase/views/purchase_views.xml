@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- ========== Spesifikasi Report ========== -->
+        <report string	= "Form Purchase General"
+				model	= "purchase.order"
+				auto	= "True"
+				name	= "report_purchase_order_sparepart"
+				rml		= "kli_purchase/reports/report_nota_purchase_sparepart2.jrxml"
+				id		= "report_purchase_order_sparepart"
+                menu    = "False"
+        />
+    </data>
+</odoo>

@@ -1,0 +1,6 @@
+model;id;name;model_id:id;group_id:id;perm_read;perm_write;perm_create;perm_unlink
+stock_transport_location;access_stock_transport_location;access_stock_transport_location;model_stock_transport_location;;1;1;1;1
+stock_transport_rate;access_stock_transport_rate;access_stock_transport_rate;model_stock_transport_rate;;1;1;1;1
+stock_transport_move;access_stock_transport_move;access_stock_transport_move;model_stock_transport_move;;1;1;1;1
+stock_transport_import;access_stock_transport_import;access_stock_transport_import;model_stock_transport_import;;1;1;1;1
+stock_transport_import_line;access_stock_transport_import_line;access_stock_transport_import_line;model_stock_transport_import_line;;1;1;1;1

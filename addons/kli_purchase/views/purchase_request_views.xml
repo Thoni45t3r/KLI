@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="kli_purchase_request_form" model="ir.ui.view">
+            <field name="name">kli.purchase.request.form</field>
+            <field name="model">purchase.request</field>
+            <field name="inherit_id" ref="c10i_purchase_request.view_purchase_request_form"/>
+            <field name="arch" type="xml">
+                <button name="create_report" position="after">
+                    <button name="create_report_kli" states="draft,to_approve,approved,done" string="Print XLSX" type="object" class="oe_highlight"/>
+                </button>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='residual']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//field[@name='line_ids']/tree/field[@name='note']" position="replace">
+                    <field name="status_barang" />
+                    <field name="keterangan" />
+                    <field name="budget_remarks" />
+                    <field name="budget_price_unit" />
+                    <field name="keterangan_po" />
+                    <field name="note" />
+                </xpath>
+            </field>
+        </record>
+
+        <!-- ========== Spesifikasi Report ========== -->
+        <report string	= "Report Purchase Request Xlsx"
+				model	= "purchase.request"
+				auto	= "True"
+                name	= "report_purchase_request_kli"
+				rml		= "kli_purchase/reports/report_purchase_request_xlsx.jrxml"
+				id		= "report_purchase_request_kli"
+                menu    = "False"
+        />
+    </data>
+</odoo>

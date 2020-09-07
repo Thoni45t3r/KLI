@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="c10i_account_location.action_location_account_cost_center" model="ir.actions.act_window">
+        <field name="name">General Charge</field>
+        <field name="res_model">account.cost.center</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="account_cost_center.account_cost_center_filter"/>
+        <field name="context">{"default_type":"cc"}</field>
+        <field name="domain">[('type', '=', 'cc')]</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Create to add a new General Charge
+          </p>
+        </field>
+    </record>
+    <record id="c10i_account_location.action_location_account_cost_center_foh" model="ir.actions.act_window">
+        <field name="name">Umum PKS</field>
+        <field name="res_model">account.cost.center</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="account_cost_center.account_cost_center_filter"/>
+        <field name="context">{"default_type":"foh"}</field>
+        <field name="domain">[('type', '=', 'foh')]</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Create to add a new Umum PKS
+          </p>
+        </field>
+    </record>
+
+        <menuitem id="c10i_palm_oil_mill.menu_mill_cost_center_config"
+              name="General Charge"
+              groups="c10i_palm_oil_mill.group_mill_manager"
+              parent="c10i_palm_oil_mill.master_mills_menu"
+              action="c10i_account_location.action_location_account_cost_center"
+              sequence="6"/>
+
+        <menuitem id="c10i_palm_oil_mill.menu_mill_cost_center_foh_config"
+              name="Umum PKS"
+              groups="c10i_palm_oil_mill.group_mill_manager"
+              parent="c10i_palm_oil_mill.master_mills_menu"
+              action="c10i_account_location.action_location_account_cost_center_foh"
+              sequence="7"/>
+    </data>
+</odoo>
